@@ -14,7 +14,7 @@ Help()
     echo
     echo "Options"
     echo " h                Displays this help message"
-    echo " n <number>       number of duplicates to create (default is 100)"
+    echo " n <number>       number of duplicates to create (default is 10)"
     echo " d <destination>  destination directory into which the duplicates "
     echo "                  are to be placed. (default is current directory) "
     echo " <initial>        path to initial directory. defaults to ./initial"
@@ -33,7 +33,7 @@ fi
 # read getopt’s output this way to handle the quoting right:
 eval set -- "$PARSED"
 
-NUMBER=100
+NUMBER=10
 DEST=$(pwd)
 
 while true; do
