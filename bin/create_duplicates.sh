@@ -7,7 +7,10 @@ Help()
     echo "create_duplicates is a rather simple tool for duplicating your initial"
     echo "RMCProfile directory"
     echo
-    echo "Syntax: create_duplicates [-h] [-n number] [-d destination] [initial]"
+    echo "Syntax: create_duplicates [-h] [-n number] [-d destination] initial"
+    echo
+    echo "Arguments"
+    echo " initial          the directory you want to duplicate"
     echo
     echo "Options"
     echo " h                Displays this help message"
@@ -32,7 +35,6 @@ eval set -- "$PARSED"
 
 NUMBER=100
 DEST=$(pwd)
-INITIAL=$DEST/initial
 
 while true; do
     case "$1" in
@@ -65,9 +67,13 @@ while true; do
 done
 
 
-if [[ $# -eq 1 ]]; then
-    INITIAL=$1
+if [[ $# -ne 1 ]]; then
+    Help
+    echo "No arguments supplied"
+    exit 1
 fi
+INITIAL=$1
+
 echo "copying $INITIAL to $DEST $NUMBER times"
 for i in $(seq 1 $NUMBER)
     do
