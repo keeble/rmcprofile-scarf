@@ -1,10 +1,11 @@
 # rmcprofile-scarf
 Help for running RMCProfile on the Scientific Computing Application Resource for Facilities (SCARF) 
-## workarounds
+## 0. workarounds
+Currently, the rmcprofile executables are not added to the path. We workaround this issue by typing:
 ```
 export PATH=$PATH:"/apps/eb/software/RMCProfile/6.7.4/exe"
 ```
-## Installation of these tools
+## 1. Installation of these tools
 1. clone this repo into your home directory:
 ```
 cd ~
@@ -14,7 +15,7 @@ git clone https://github.com/keeble/rmcprofile-scarf.git
 ```
 export PATH=$PATH:~/rmcprofile-scarf/bin
 ```
-## instructions for use
+## 2. nstructions for use
 1. Come up with your good starting configuration for your RMCProfile run on your own machine.
 2. Login to SCARF and create a working root directory, for example `mkdir ~/example_root`
 3. Copy your good starting point into a subdirectory of your working root directory. Call it something useful like "initial" or "starting". 
