@@ -18,7 +18,10 @@ export PATH=$PATH:"/apps/eb/software/RMCProfile/6.7.4/exe"
 ## 2. Instructions for use
 1. Come up with your good starting configuration for your RMCProfile run on your own machine.
 2. Login to SCARF and create a working root directory, for example `mkdir ~/example_root`
-3. Copy your good starting point into a subdirectory of your working root directory. Call it something useful like "initial" or "starting". 
+3. Copy your good starting point into a subdirectory of your working root directory. Call it something useful like "initial" or "starting". There are various ways of transferring files to and from SCARF, e.g. [SAMBA](https://www.scarf.rl.ac.uk/documentation/samba) or scp:
+    ```
+    $ scp -r /path/to/my/starting/configuration/ <username>@scarf.rl.ac.uk:~/example_root
+    ```
 4. Duplicate this directory. The tool `create_duplicates.sh`, which should be called from your working root directory, will do this for you. It's call looks like this:
     ```
     cd ~/example_root
