@@ -1,10 +1,5 @@
 # rmcprofile-scarf
 Help for running RMCProfile on the Scientific Computing Application Resource for Facilities (SCARF) 
-## 0. workarounds
-Currently, the rmcprofile executables are not added to the path. We workaround this issue by typing:
-```
-export PATH=$PATH:"/apps/eb/software/RMCProfile/6.7.4/exe"
-```
 ## 1. Installation of these tools
 1. clone this repo into your home directory:
     ```
