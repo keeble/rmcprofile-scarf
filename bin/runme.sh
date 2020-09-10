@@ -1,4 +1,3 @@
 #!/bin/bash
-module load RMCProfile
-export PATH=$PATH:"/apps/eb/software/RMCProfile/6.7.4/exe"
+module load RMCProfile/6.7.4
 rmcprofile $1
