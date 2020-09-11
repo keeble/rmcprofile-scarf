@@ -1,5 +1,5 @@
 # rmcprofile-scarf
-Help for running RMCProfile on the Scientific Computing Application Resource for Facilities (SCARF) 
+Help for running RMCProfile on the Scientific Computing Application Resource for Facilities (SCARF).
 ## 1. General Notes on RMCProfile on SCARF
 1. There are, at any given time, potentially multiple versions of RMCProfile installed. To see which are currently installed, type :
     ```
@@ -32,7 +32,7 @@ Help for running RMCProfile on the Scientific Computing Application Resource for
     cd ~/example_root
     create_duplicates.sh [-h] [-n number] [-d destination] initial
     ```
-    where n is an optional number of duplicates to make (default 10), and d is an optional destination to place the duplicates (default is the current directory). Initial is the only required argument, and it's the path to your inital directory you just made. This can be a relative or abolsute path. 
+    where n is an optional number of duplicates to make (default 10), and d is an optional destination to place the duplicates (default is the current directory). Initial is the only required argument, and it's the path to your inital directory you just made. This can be a relative or absolute path. 
 
 6. Submit your duplicates. The tool `submit_duplicates.sh` will do this for you. It's call looks like this:
     ```
