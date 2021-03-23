@@ -7,7 +7,7 @@ Help()
     echo "create_duplicates is a rather simple tool for duplicating your initial"
     echo "RMCProfile directory"
     echo
-    echo "Syntax: create_duplicates [-h] [-n number] [-d destination] initial"
+    echo "Syntax: create_duplicates [-h] [-n number] [-d destination] [-p prefix] initial"
     echo
     echo "Arguments"
     echo " initial          the directory you want to duplicate"
@@ -17,13 +17,13 @@ Help()
     echo " n <number>       number of duplicates to create (default is 10)"
     echo " d <destination>  destination directory into which the duplicates "
     echo "                  are to be placed. (default is current directory) "
+    echo " p <prefix>       prefix for created directories. defaults to 'run'."
     echo " <initial>        path to initial directory. defaults to ./initial"
     echo "--------------------------------------------------------------------------"
 }
 
-OPTIONS=hn:d:
-LONGOPTS=help,number,destination
-
+OPTIONS=hn:d:p:
+LONGOPTS=help,number,destination,prefix
 
 ! PARSED=$(getopt --options=$OPTIONS --longoptions=$LONGOPTS --name "$0" -- "$@")
 
@@ -35,7 +35,7 @@ eval set -- "$PARSED"
 
 NUMBER=10
 DEST=$(pwd)
-
+PREFIX="run"
 while true; do
     case "$1" in
         -n|--number)
@@ -44,6 +44,10 @@ while true; do
             ;;
         -d|--destination)
             DEST="$2"
+            shift 2
+            ;;
+        -p|--prefix)
+            PREFIX="$2"
             shift 2
             ;;
         -m|--macro)
@@ -78,7 +82,7 @@ echo "copying $INITIAL to $DEST $NUMBER times"
 for i in $(seq 1 $NUMBER)
     do
         echo "setting up run $i"
-        thisrun="run_"$(printf "%03d" $i)
+        thisrun=$PREFIX"_"$(printf "%03d" $i)
         cp -r $INITIAL $DEST"/"$thisrun
 done
 exit 0 

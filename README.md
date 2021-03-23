@@ -30,10 +30,9 @@ Help for running RMCProfile on the Scientific Computing Application Resource for
 5. Duplicate this directory. The tool `create_duplicates.sh`, which should be called from your working root directory, will do this for you. It's call looks like this:
     ```
     cd ~/example_root
-    create_duplicates.sh [-h] [-n number] [-d destination] initial
+    create_duplicates.sh [-h] [-n number] [-d destination] [-p prefix] initial
     ```
-    where n is an optional number of duplicates to make (default 10), and d is an optional destination to place the duplicates (default is the current directory). Initial is the only required argument, and it's the path to your inital directory you just made. This can be a relative or absolute path. 
-
+    where n is an optional number of duplicates to make (default 10), d is an optional destination to place the duplicates (default is the current directory), and prefix will be used to name all the created directories (default is 'run'). Initial is the only required argument, and it's the path to your inital directory you just made. This can be a relative or absolute path. 
 6. Submit your duplicates. The tool `submit_duplicates.sh` will do this for you. It's call looks like this:
     ```
     submit_duplicates.sh [-h] [-d directory_prefix] [-v version] stem_name
