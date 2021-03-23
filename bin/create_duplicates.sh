@@ -25,7 +25,6 @@ Help()
 OPTIONS=hn:d:p:
 LONGOPTS=help,number,destination,prefix
 
-
 ! PARSED=$(getopt --options=$OPTIONS --longoptions=$LONGOPTS --name "$0" -- "$@")
 
 if [[ ${PIPESTATUS[0]} -ne 0 ]]; then
