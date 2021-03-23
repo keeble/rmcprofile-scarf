@@ -74,7 +74,7 @@ if [[ $VERSION == "/6.7.8" ]]; then
     # echo 'export SINGULARITY_BIND="/work3,/scratch,/apps,/usr/share/lmod/lmod,/usr/share/lmod/lmod/libexec,/usr/share/lua,/usr/share/tcl8.5/init.tcl,/usr/bin/lua,/usr/bin/tclsh,/etc/profile.modules,/usr/lib64/liblua-5.1.so,/usr/lib64/libreadline.so.6,/usr/lib64/libncurses.so.5,/usr/lib64/libtinfo.so.5,/usr/lib64/lua,/usr/lib64/libtcl8.5.so"' >> $JOBFILE
     echo 'export SINGULARITY_BIND="/work3,/scratch,/apps"' >> $JOBFILE
     # echo 'source /usr/share/lmod/lmod/init/bash' >> $JOBFILE
-    echo 'singularity exec /home/vol05/scarf835/rmcprofile-scarf/bin/rmcprofile.sif rmcprofile' $2 >> $JOBFILE
+    echo 'singularity exec /home/vol09/scarf489/jobs/singularity/rmcprofile/rmcprofile.sif rmcprofile' $2 >> $JOBFILE
 else
     echo 'runme.sh ' $2 $VERSION >> $JOBFILE
 fi
